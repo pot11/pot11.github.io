@@ -1,9 +1,29 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta http-equiv="refresh" content="0;url=https://www.bilibili.com/video/BV1va4y1Z7i4/?spm_id_from=333.337.search-card.all.click&vd_source=71f4326d7886c101e7d62b6cde87ebc8">
+    <script>
+        // 获取当前 URL
+        var currentUrl = window.location.href;
+
+        // 定义重定向映射
+        var redirectMap = {
+            "fly": "https://dybscre01638web9rst2.okirin.top/api/v1/client/subscribe?token=4588fa7a667b958c4af707f79c39e4ff",
+            "bilibili": "https://www.bilibili.com"
+        };
+
+        // 解析后缀
+        var suffix = currentUrl.split('/').pop();
+
+        // 检查后缀是否在映射中
+        if (redirectMap.hasOwnProperty(suffix)) {
+            // 重定向到对应的 URL
+            window.location.replace(redirectMap[suffix]);
+        } else {
+            // 处理未匹配到的情况，例如重定向到默认 URL
+            window.location.replace("https://baidu.com");
+        }
+    </script>
 </head>
 <body>
 </body>
 </html>
-
